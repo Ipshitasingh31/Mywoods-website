@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/shop-context';
 import ProductCard from '../components/ui/ProductCard';
 import { brands, categories as categoryData, products as productData } from '../data/products';
 

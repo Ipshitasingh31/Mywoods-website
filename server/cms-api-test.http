@@ -1,0 +1,30 @@
+### GET all
+GET http://localhost:5000/api/woods
+
+### POST create
+POST http://localhost:5000/api/woods
+Content-Type: application/json
+
+{
+  "name": "Teak Wood",
+  "description": "Premium teak",
+  "color": "Golden",
+  "density": 720,
+  "origin": "India",
+  "pricePerUnit": 60.5,
+  "available": true,
+  "type": "hardwood"
+}
+
+### PUT update (replace :id)
+PUT http://localhost:5000/api/woods/1
+Content-Type: application/json
+
+{
+  "name": "Teak Wood 2",
+  "description": "Updated"
+}
+
+### DELETE (replace :id)
+DELETE http://localhost:5000/api/woods/1
+

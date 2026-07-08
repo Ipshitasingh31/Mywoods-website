@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/shop-context';
 import { products } from '../data/products';
 
 const reviews = [
@@ -43,7 +42,14 @@ function ProductDetails() {
       <section className="detail-hero glass-card">
         <div className="detail-gallery">
           <div className="detail-main-image">
-            <img src={product.images[activeImage]} alt={product.name} loading="lazy" />
+            <img
+              src={product.images[activeImage]}
+              alt={product.name}
+              loading="lazy"
+              onError={(event) => {
+                event.currentTarget.src = 'https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=640';
+              }}
+            />
           </div>
           <div className="detail-thumbs">
             {product.images.map((image, index) => (
@@ -53,7 +59,14 @@ function ProductDetails() {
                 onClick={() => setActiveImage(index)}
                 aria-label={`Show image ${index + 1}`}
               >
-                <img src={image} alt={`${product.name} variation ${index + 1}`} loading="lazy" />
+                <img
+                  src={image}
+                  alt={`${product.name} variation ${index + 1}`}
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.src = 'https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=640';
+                  }}
+                />
               </button>
             ))}
           </div>
@@ -125,7 +138,14 @@ function ProductDetails() {
           <div className="related-grid">
             {related.map((item) => (
               <Link key={item.id} to={`/product/${item.id}`} className="related-card">
-                <img src={item.images[0]} alt={item.name} loading="lazy" />
+                <img
+                  src={item.images[0]}
+                  alt={item.name}
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.src = 'https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=640';
+                  }}
+                />
                 <div>
                   <strong>{item.name}</strong>
                   <span>${item.price}</span>

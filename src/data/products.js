@@ -38,9 +38,9 @@ export const products = [
       'Timeless beige finish'
     ],
     images: [
-      'https://images.unsplash.com/photo-1493666438817-866a91353ca9?w=640',
-      'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=640',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640'
+      'https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=640',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640',
+      'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=640'
     ]
   },
   {
@@ -67,8 +67,8 @@ export const products = [
     ],
     images: [
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640',
-      'https://images.unsplash.com/photo-1549187774-b4e9b0445b77?w=640',
-      'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=640'
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640'
     ]
   },
   {
@@ -150,9 +150,9 @@ export const products = [
       'Accent stitching detail'
     ],
     images: [
-      'https://images.unsplash.com/photo-1493666438817-866a91353ca9?w=640',
-      'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=640',
-      'https://images.unsplash.com/photo-1549187774-b4e9b0445b77?w=640'
+      'https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=640',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=640',
+      'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=640'
     ]
   },
   {

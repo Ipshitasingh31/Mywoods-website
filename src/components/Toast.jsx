@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/shop-context';
 
 function Toast() {
   const { toast } = useContext(ShopContext);

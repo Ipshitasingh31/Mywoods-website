@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/shop-context';
 
 function Wishlist() {
   const { wishlistItems, removeFromWishlist, addToCart } = useContext(ShopContext);

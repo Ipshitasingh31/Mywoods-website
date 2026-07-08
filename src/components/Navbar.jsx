@@ -1,13 +1,14 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/shop-context';
 
 const navItems = [
   { label: 'Home', to: '/' },
   { label: 'Shop', to: '/shop' },
   { label: 'Living Room', to: '/categories/living-room' },
   { label: 'Bedroom', to: '/categories/bedroom' },
-  { label: 'Dining', to: '/categories/dining' }
+  { label: 'Dining', to: '/categories/dining' },
+  { label: 'CMS', to: '/cms' }
 ];
 
 function Navbar() {

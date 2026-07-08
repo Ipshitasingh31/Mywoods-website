@@ -12,6 +12,7 @@ import Wishlist from './pages/Wishlist';
 import Checkout from './pages/Checkout';
 import OrderSuccess from './pages/OrderSuccess';
 import NotFound from './pages/NotFound';
+import CMS from "./pages/CMS";
 import './App.css';
 
 function App() {
@@ -31,7 +32,10 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="order-success" element={<OrderSuccess />} />
           <Route path="*" element={<NotFound />} />
+          
         </Route>
+
+        <Route path="cms" element={<CMS />} />
       </Routes>
     </ShopProvider>
   );

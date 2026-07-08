@@ -1,7 +1,6 @@
-import { createContext, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { products as productData } from '../data/products';
-
-export const ShopContext = createContext(null);
+import { ShopContext } from './shop-context';
 
 export function ShopProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
