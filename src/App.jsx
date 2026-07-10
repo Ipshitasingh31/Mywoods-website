@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
+import { API_URL } from "./config";
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import AnnouncementBar from './components/AnnouncementBar';
@@ -96,10 +97,8 @@ function App() {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const response = await axios.get('/api/woods');
-        if (Array.isArray(response.data) && response.data.length > 0) {
-          setProducts(response.data);
-        }
+        const response = await axios.get(`${API_URL}/api/woods`);
+setProducts(response.data);
       } catch (error) {
         setProducts(fallbackProducts);
       }

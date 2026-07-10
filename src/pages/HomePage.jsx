@@ -82,7 +82,7 @@ function HomePage({ products, addToCart, toggleWishlist, wishlist }) {
           <p>New arrivals crafted to elevate daily rituals.</p>
         </div>
         <div className="product-grid">
-          {products.slice(0, 4).map((product) => (
+          {[...products].reverse().slice(0, 4).map((product) => (
             <ProductCard
               key={product._id || product.id}
               product={product}
