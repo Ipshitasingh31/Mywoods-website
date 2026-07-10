@@ -1,80 +1,42 @@
-import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ShopContext } from '../context/shop-context';
+import { Link, NavLink } from 'react-router-dom';
 
 const navItems = [
   { label: 'Home', to: '/' },
-  { label: 'Shop', to: '/shop' },
-  { label: 'Living Room', to: '/categories/living-room' },
-  { label: 'Bedroom', to: '/categories/bedroom' },
-  { label: 'Dining', to: '/categories/dining' },
-  { label: 'CMS', to: '/cms' }
+  { label: 'Sofa & Seating', to: '/products' },
+  { label: 'Beds & Bedroom', to: '/products' },
+  { label: 'Dining & Kitchen', to: '/products' },
+  { label: 'Shop Now', to: '/products', isAction: true },
+  { label: 'CMS', to: '/cms', isAction: true },
 ];
 
-function Navbar() {
-  const { cartCount, wishlistItems } = useContext(ShopContext);
-  const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState('');
-
+function Navbar({ cartCount, wishlistCount }) {
   return (
-    <header className="navbar-shell">
-      <div className="navbar-backdrop" />
-      <div className="navbar-inner">
-        <Link to="/" className="brand-link">
-          <span className="brand-mark">M</span>
-          <div>
-            <p>MyWoods</p>
-            <small>Furniture Atelier</small>
-          </div>
+    <header className="navbar">
+      <div className="navbar__inner">
+        <Link to="/" className="brand" aria-label="Mywoods home">
+          <span className="brand__mark">M</span>
+          <span className="brand__text">Mywoods</span>
         </Link>
-
-        <div className="navbar-search">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search premium furniture"
-            aria-label="Search products"
-          />
-          <button type="button">Search</button>
-        </div>
-
-        <nav className={`navbar-links ${open ? 'open' : ''}`}>
-          <button className="nav-close" onClick={() => setOpen(false)}>
-            ×
-          </button>
-          <ul>
-            <li>
-              <label className="categories-dropdown">
-                Categories
-                <select aria-label="Choose category">
-                  <option>All Categories</option>
-                  <option>Sofas</option>
-                  <option>Beds</option>
-                  <option>Dining Tables</option>
-                </select>
-              </label>
-            </li>
-            {navItems.map((item) => (
-              <li key={item.to}>
-                <Link to={item.to}>{item.label}</Link>
-              </li>
-            ))}
-          </ul>
+        <nav className="nav-links">
+          {navItems.map((item) => (
+            <NavLink key={item.label} to={item.to} className="nav-link">
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
-
-        <div className="navbar-actions">
-          <Link to="/wishlist" className="icon-button" aria-label="Wishlist">
-            ♥<span>{wishlistItems.length}</span>
+        <div className="navbar-icons">
+          <Link to="/products" className="navbar-icon" aria-label="Search">
+            🔍
           </Link>
-          <Link to="/cart" className="icon-button" aria-label="Cart">
-            🛒<span>{cartCount}</span>
+          <Link to="/wishlist" className="navbar-icon" aria-label="Wishlist">
+            ♡
           </Link>
-          <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu">
-            ☰
-          </button>
+          <Link to="/cart" className="navbar-icon" aria-label="Cart">
+            🛍️
+            {cartCount > 0 ? <span className="navbar-icon__badge">{cartCount}</span> : null}
+          </Link>
         </div>
       </div>
-      <div className="navbar-hero-wave" />
     </header>
   );
 }

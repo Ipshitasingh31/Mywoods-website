@@ -1,53 +1,40 @@
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <motion.footer
-      className="footer-shell"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: 0.1 }}
-    >
-      <div className="footer-grid">
+    <footer className="footer">
+      <div className="footer__inner">
         <div>
-          <h4>MyWoods</h4>
-          <p>Premium furniture for modern homes. Designed with calm luxury and effortless styling.</p>
+          <h3>Mywoods</h3>
+          <p>Timeless furniture shaped with warm woods, clean lines, and modern comfort.</p>
         </div>
-
         <div>
-          <h5>Customer Service</h5>
+          <h3>Categories</h3>
           <ul>
-            <li>Shipping</li>
-            <li>Returns</li>
-            <li>Order Tracking</li>
-            <li>FAQ</li>
+            <li><Link to="/products">Beds</Link></li>
+            <li><Link to="/products">Sofas</Link></li>
+            <li><Link to="/products">Dining</Link></li>
+            <li><Link to="/products">Decor</Link></li>
           </ul>
         </div>
-
         <div>
-          <h5>Information</h5>
+          <h3>Customer Care</h3>
           <ul>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-            <li>Contact</li>
-            <li>Careers</li>
+            <li><Link to="/products">Shipping</Link></li>
+            <li><Link to="/products">Returns</Link></li>
+            <li><Link to="/products">Support</Link></li>
           </ul>
         </div>
-
         <div>
-          <h5>Newsletter</h5>
-          <p>Receive curated furniture drops and luxury home styling tips.</p>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Enter your email" aria-label="Email" />
-            <button type="submit">Subscribe</button>
-          </form>
+          <h3>Contact</h3>
+          <ul>
+            <li>hello@mywoods.com</li>
+            <li>+1 (800) 555-0146</li>
+            <li>14 River Street, Austin</li>
+          </ul>
         </div>
       </div>
-      <div className="footer-bottom">
-        <p>© 2026 MyWoods. Crafted for premium living.</p>
-        <div className="social-icons">Instagram · Pinterest · LinkedIn</div>
-      </div>
-    </motion.footer>
+    </footer>
   );
 }
 
