@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post("https://mywoods-api-sepb.onrender.com/api/auth/register", {
         name,
         email,
         password,

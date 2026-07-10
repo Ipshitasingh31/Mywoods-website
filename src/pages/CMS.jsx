@@ -16,7 +16,7 @@ function CMSPage() {
 
   const loadProducts = async () => {
     try {
-      const response = await axios.get("/api/woods");
+      const response = await axios.get("https://mywoods-api-sepb.onrender.com/api/woods");
       setProducts(response.data);
     } catch (error) {
       console.error(error);
@@ -36,9 +36,9 @@ function CMSPage() {
       };
 
       if (editingId) {
-        await axios.put(`/api/woods/${editingId}`, payload);
+        await axios.put(`https://mywoods-api-sepb.onrender.com/api/woods/${editingId}`, payload);
       } else {
-        await axios.post("/api/woods", payload);
+        await axios.post("https://mywoods-api-sepb.onrender.com/api/woods", payload);
       }
 
       setForm(emptyForm);
@@ -62,7 +62,7 @@ function CMSPage() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/woods/${id}`);
+      await axios.delete(`https://mywoods-api-sepb.onrender.com/api/woods/${id}`);
       loadProducts();
     } catch (error) {
       console.error(error);
